@@ -1,5 +1,5 @@
 
-import java.io.Console;
+
 import java.util.Scanner;
 
 /*
@@ -34,19 +34,17 @@ public class MainMenu {
         
         switch(optionSelected){
             case 1:
-                System.out.println("Option 1 Pressed");
-                executeOptionSelected(optionSelected);
+                beginANewGame();
                 break;
             
-            case 2: 
-                System.out.println("Option 2 Pressed");
-                executeOptionSelected(optionSelected);
+            case 2:
+                
                 break;
                 
             case 3:
-                System.out.println("Exiting");
-                executeOptionSelected(optionSelected);
+                
                 break;
+                
             default:
                 showMenu();
                 getOptionSelected();
@@ -57,27 +55,11 @@ public class MainMenu {
         optionSelected = scannerForUserInput.nextInt();
         return optionSelected;
     }
-    
-    public void executeOptionSelected(int optionSelected){
-        switch(optionSelected){
-            case 1:
-                beginANewGame();
-                break;
-            
-            case 2: 
-                System.out.println("Option 2 Pressed Again");
-                break;
-                
-            case 3:
-                System.out.println("Exiting Again");
-                break;
-        }
-
-    }
-    
+ 
     public void beginANewGame(){
         GameBoard currentBoard = new GameBoard(null);
         currentBoard.drawEmptyBoard();
+        currentBoard.getDimensions();
     }
     
 }

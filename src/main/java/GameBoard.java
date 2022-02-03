@@ -1,3 +1,6 @@
+
+import Data_Structures_Package.BoardStructure;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,11 +11,16 @@
  *
  * @author olgt1
  */
+
 public class GameBoard {
-    LoadedGame currentGame;
+    BoardStructure currentBoard;
     
-    GameBoard(LoadedGame currentGame){
-        this.currentGame = currentGame;
+    public GameBoard(BoardStructure currentGame){
+        if(currentGame == null){
+            currentBoard = new BoardStructure();
+        } else {
+            this.currentBoard = currentGame;
+        }
     }
     
     public void drawEmptyBoard(){
@@ -47,5 +55,9 @@ public class GameBoard {
         
         System.out.println();
 
+    }
+
+    public void getDimensions(){
+        this.currentBoard.getDimensions();
     }
 }
